@@ -6,25 +6,25 @@ resources:
   - namespace.yaml
 
 patches:
-  - deployment_env.yaml
-  - frontend-container-security-context.yaml
-  - backend-container-security-context.yaml
-  - ingress.yaml
-  - deployment_hpa.yaml
+  - path: deployment_env.yaml
+  - path: frontend-container-security-context.yaml
+  - path: backend-container-security-context.yaml
+  - path: ingress.yaml
+  - path: deployment_hpa.yaml
 
 namespace: gitops-demo-stage
 
 nameSuffix: -stage
 
 labels:
-- pairs:
-    env: stage
-  includeSelectors: true
+  - pairs:
+      env: stage
+    includeSelectors: true
 
 images:
-- name: pentago/gitops-demo-backend
-  newName: pentago/gitops-demo-backend
-  newTag: 10b202a
-- name: pentago/gitops-demo-frontend
-  newName: pentago/gitops-demo-frontend
-  newTag: 670658e
+  - name: pentago/gitops-demo-backend
+    newName: pentago/gitops-demo-backend
+    newTag: 10b202a
+  - name: pentago/gitops-demo-frontend
+    newName: pentago/gitops-demo-frontend
+    newTag: 670658e

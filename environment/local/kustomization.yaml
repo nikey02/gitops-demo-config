@@ -5,9 +5,9 @@ resources:
   - ../dev
 
 labels:
-- pairs:
-    env: local
-  includeSelectors: true
+  - pairs:
+      env: local
+    includeSelectors: true
 
 patches:
-  - deployment_image.yaml
+  - path: deployment_image.yaml
